@@ -39,7 +39,7 @@ RUN mkdir dummycloud
 RUN pushd dummycloud
 
 ## Download dummycloud from https://github.com/dgiese/dustcloud/releases
-ADD https://github.com/dgiese/dustcloud/releases
+ADD https://github.com/dgiese/dustcloud/releases /rockrobo/dummycloud
 RUN unzip -a 'dummycloud*.zip'
 RUN popd
 
