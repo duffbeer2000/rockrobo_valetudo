@@ -28,36 +28,35 @@ RUN apt-get update && apt-get install -y \
 SHELL ["/bin/bash", "-c"]
 
 ## Create a new directory for your work
-RUN mkdir rockrobo
-RUN cd rockrobo
-
+RUN ssh-keygen -t ed25519 -C "your_email@example.com" \
+ && mkdir rockrobo \
+ && cd rockrobo \
 ## Clone the dustcloud repository (until imagebuilder > 0.1 is available)
-RUN git clone https://github.com/dgiese/dustcloud.git
-
+ && git clone https://github.com/dgiese/dustcloud.git \
 ## Create a directory for dummycloud
-RUN mkdir dummycloud
-RUN pushd dummycloud
+ && RUN mkdir dummycloud \
+ && pushd dummycloud
 
 ## Download dummycloud from https://github.com/dgiese/dustcloud/releases
-ADD https://github.com/dgiese/dustcloud/releases /rockrobo/dummycloud
-RUN echo ${ls}
-WORKDIR /rockrobo/dummycloud
-RUN unzip -a 'dummycloud_0.1.zip'
-RUN echo ${ls}
-RUN popd
-
-## Create a valetudo directory
-RUN mkdir valetudo
-RUN pushd valetudo
-
-## Download the latest valetudo binary from https://github.com/Hypfer/Valetudo/releases
-RUN wget https://github.com/Hypfer/Valetudo/releases
-RUN mkdir deployment
-RUN pushd deployment
-RUN wget https://github.com/Hypfer/Valetudo/raw/master/deployment/valetudo.conf
-RUN popd
-RUN popd
-
+#ADD https://github.com/dgiese/dustcloud/releases /rockrobo/dummycloud
+#RUN echo ${ls}
+#WORKDIR /rockrobo/dummycloud
+#RUN unzip -a 'dummycloud_0.1.zip'
+#RUN echo ${ls}
+#RUN popd
+#
+### Create a valetudo directory
+#RUN mkdir valetudo
+#RUN pushd valetudo
+#
+### Download the latest valetudo binary from https://github.com/Hypfer/Valetudo/releases
+#RUN wget https://github.com/Hypfer/Valetudo/releases
+#RUN mkdir deployment
+#RUN pushd deployment
+#RUN wget https://github.com/Hypfer/Valetudo/raw/master/deployment/valetudo.conf
+#RUN popd
+#RUN popd
+#
 # Create rrlogd-patcher directory
 ###RUN mkdir rrlogd-patcher
 ###RUN pushd rrlogd-patcher
