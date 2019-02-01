@@ -92,7 +92,7 @@ RUN cd image
 
 
 
-ssh-keygen -t ed25519 -C $EMAIL
+RUN ssh-keygen -t ed25519 -C $EMAIL
 RUN tail -f /dev/null
 
 
