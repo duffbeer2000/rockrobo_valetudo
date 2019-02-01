@@ -25,11 +25,11 @@ RUN apt-get update && apt-get install -y \
 && rm -rf /var/lib/apt/lists/*
 
 ## Switch shell to bash
-#SHELL ["/bin/bash", "-c"]
-#
+SHELL ["/bin/bash", "-c"]
+
 ## Create a new directory for your work
-#RUN mkdir rockrobo
-#RUN cd rockrobo
+RUN mkdir rockrobo
+RUN cd rockrobo
 #
 ## Clone the dustcloud repository (until imagebuilder > 0.1 is available)
 #RUN git clone https://github.com/dgiese/dustcloud.git
