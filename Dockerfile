@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     bash \
     ccrypt \
-    dos2unix
+    dos2unix \
     git \
     nano \
     net-tools \
