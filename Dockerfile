@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
     git \
     nano \
     net-tools \
-    openssh \
+    openssh-server \
+    openssh-client \
     python3 \
     python3-pip \
     python3-venv \
