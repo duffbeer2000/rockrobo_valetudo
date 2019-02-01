@@ -70,9 +70,10 @@ RUN wget https://dustcloud.seemoo.de/public/temp/v11_001792.pkg
 RUN wget https://github.com/dgiese/dustcloud/raw/master/devices/xiaomi.vacuum/original-soundpackages/encrypted/english.pkg
 RUN popd
 
-If you followed the above commands, yourrockrobo directory structure should now look like this:
+# If you followed the above commands, yourrockrobo directory structure should now look like this:
 RUN tree -L 2 rockrobo/
 
+# To create the firmware image you should run the following commands:
 RUN mkdir image
 RUN cd image     
 #RUN sudo ../dustcloud/devices/xiaomi.vacuum/firmwarebuilder/imagebuilder.sh \
