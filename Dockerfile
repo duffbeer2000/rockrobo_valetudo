@@ -100,3 +100,6 @@ RUN ssh-keygen -t ed25519 -C "your_email@example.com" \
 ###
 ###RUN ssh-keygen -t ed25519 -C $EMAIL
 #RUN tail -f /dev/null
+CMD ["tail", "-f /dev/null"]
+
+ENV DEBIAN_FRONTEND teletype
