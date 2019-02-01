@@ -40,7 +40,7 @@ RUN pushd dummycloud
 
 ## Download dummycloud from https://github.com/dgiese/dustcloud/releases
 ADD https://github.com/dgiese/dustcloud/releases /rockrobo/dummycloud
-RUN unzip -a 'dummycloud*.zip'
+RUN unzip -a 'dummycloud_0.1.zip'
 RUN popd
 
 ## Create a valetudo directory
@@ -48,14 +48,14 @@ RUN mkdir valetudo
 RUN pushd valetudo
 
 ## Download the latest valetudo binary from https://github.com/Hypfer/Valetudo/releases
-###RUN wget https://github ...
-###RUN mkdir deployment
-###RUN pushd deployment
-###RUN wget https://github.com/Hypfer/Valetudo/raw/master/deployment/valetudo.conf
-###RUN popd
-###RUN popd
-###
-#### Create rrlogd-patcher directory
+RUN wget https://github.com/Hypfer/Valetudo/releases
+RUN mkdir deployment
+RUN pushd deployment
+RUN wget https://github.com/Hypfer/Valetudo/raw/master/deployment/valetudo.conf
+RUN popd
+RUN popd
+
+# Create rrlogd-patcher directory
 ###RUN mkdir rrlogd-patcher
 ###RUN pushd rrlogd-patcher
 ###
