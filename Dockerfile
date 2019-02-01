@@ -40,7 +40,10 @@ RUN pushd dummycloud
 
 ## Download dummycloud from https://github.com/dgiese/dustcloud/releases
 ADD https://github.com/dgiese/dustcloud/releases /rockrobo/dummycloud
+RUN echo ${ls}
+WORKDIR /rockrobo/dummycloud
 RUN unzip -a 'dummycloud_0.1.zip'
+RUN echo ${ls}
 RUN popd
 
 ## Create a valetudo directory
