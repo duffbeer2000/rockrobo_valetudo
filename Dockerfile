@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y \
 SHELL ["/bin/bash", "-c"]
 
 ## Create a new directory for your work
-RUN ssh-keygen -t ed25519 -C "your_email@example.com" \
- && mkdir rockrobo \
+# ssh-keygen -t ed25519 -C "your_email@example.com" \
+RUN mkdir rockrobo \
  && cd rockrobo \
 ## Clone the dustcloud repository (until imagebuilder > 0.1 is available)
  && git clone https://github.com/dgiese/dustcloud.git \
