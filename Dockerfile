@@ -30,24 +30,24 @@ SHELL ["/bin/bash", "-c"]
 ## Create a new directory for your work
 RUN mkdir rockrobo
 RUN cd rockrobo
-#
-## Clone the dustcloud repository (until imagebuilder > 0.1 is available)
-#RUN git clone https://github.com/dgiese/dustcloud.git
-#
-## Create a directory for dummycloud
-#RUN mkdir dummycloud
-#RUN pushd dummycloud
-#
-## Download dummycloud from https://github.com/dgiese/dustcloud/releases
-#RUN wget https://github.com/dgiese/dustcloud/releases
-#RUN unzip -a 'dummycloud*.zip'
-#RUN popd
 
-#### Create a valetudo directory
-###RUN mkdir valetudo
-###RUN pushd valetudo
-###
-#### Download the latest valetudo binary from https://github.com/Hypfer/Valetudo/releases
+## Clone the dustcloud repository (until imagebuilder > 0.1 is available)
+RUN git clone https://github.com/dgiese/dustcloud.git
+
+## Create a directory for dummycloud
+RUN mkdir dummycloud
+RUN pushd dummycloud
+
+## Download dummycloud from https://github.com/dgiese/dustcloud/releases
+ADD https://github.com/dgiese/dustcloud/releases
+RUN unzip -a 'dummycloud*.zip'
+RUN popd
+
+## Create a valetudo directory
+RUN mkdir valetudo
+RUN pushd valetudo
+
+## Download the latest valetudo binary from https://github.com/Hypfer/Valetudo/releases
 ###RUN wget https://github ...
 ###RUN mkdir deployment
 ###RUN pushd deployment
