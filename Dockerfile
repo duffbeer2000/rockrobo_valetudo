@@ -24,6 +24,9 @@ RUN apt-get update && apt-get install -y \
     wget \
 && rm -rf /var/lib/apt/lists/*
 
+# Switch shell to bash
+SHELL ["/bin/bash", "-c"]
+
 # Create a new directory for your work
 RUN mkdir rockrobo
 RUN cd rockrobo
